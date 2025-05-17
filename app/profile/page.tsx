@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react"
 import { useRouter } from "next/navigation"
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
+import { Card, CardContent, CardDescription, CardFooter, CardHeader } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Separator } from "@/components/ui/separator"
 import { Badge } from "@/components/ui/badge"
@@ -11,6 +11,7 @@ import WorldIDVerify from "@/components/WorldIDVerify"
 import { useAuth } from "@/providers/auth-provider"
 import { useWallet } from "@/providers/wallet-provider"
 import { useContract } from "@/hooks/use-contract"
+import { Logo } from "@/components/logo"
 
 export default function Profile() {
   const router = useRouter()
@@ -66,10 +67,10 @@ export default function Profile() {
             <Button variant="ghost" size="icon" onClick={() => router.push("/dashboard")}>
               <ArrowLeft className="h-4 w-4" />
             </Button>
-            <CardTitle className="text-2xl">Profile</CardTitle>
+            <Logo size="sm" />
             <div className="w-8" />
           </div>
-          <CardDescription>Manage your account and wallet</CardDescription>
+          <CardDescription className="text-center">Manage your account and wallet</CardDescription>
         </CardHeader>
         <CardContent className="space-y-6">
           {showVerification ? (
@@ -149,7 +150,7 @@ export default function Profile() {
           )}
         </CardContent>
         <CardFooter className="text-xs text-center text-muted-foreground">
-          MoodChain - Powered by Base & World ID
+          Fathia - Powered by Base & World ID
         </CardFooter>
       </Card>
     </main>

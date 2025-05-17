@@ -9,10 +9,15 @@ import type { Metadata } from "next"
 
 const inter = Inter({ subsets: ["latin"] })
 
+// Update the metadata title and description
 export const metadata: Metadata = {
-  title: "MoodChain - Record Your Mood on Base",
+  title: "Fathia - Record Your Mood on Base",
   description: "A decentralized app for recording your mood on the Base blockchain with World ID verification",
   viewport: "width=device-width, initial-scale=1, maximum-scale=1",
+  icons: {
+    icon: [{ url: "/favicon.png" }],
+    apple: [{ url: "/logo.png" }],
+  },
     generator: 'v0.dev'
 }
 

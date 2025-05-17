@@ -1,13 +1,15 @@
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import Link from "next/link"
+import { Logo } from "@/components/logo"
 
 export default function Home() {
   return (
     <main className="container max-w-md mx-auto p-4 min-h-screen flex flex-col justify-center">
       <Card className="w-full">
-        <CardHeader>
-          <CardTitle className="text-3xl text-center">MoodChain</CardTitle>
+        <CardHeader className="flex flex-col items-center">
+          <Logo size="lg" showText={false} className="mb-4" />
+          <CardTitle className="text-3xl text-center">Fathia</CardTitle>
           <CardDescription className="text-center text-lg">Record your mood on the blockchain</CardDescription>
         </CardHeader>
         <CardContent className="space-y-4 text-center">

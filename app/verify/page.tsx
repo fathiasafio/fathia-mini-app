@@ -10,6 +10,7 @@ import { useAuth } from "@/providers/auth-provider"
 import { useWallet } from "@/providers/wallet-provider"
 import { useContract } from "@/hooks/use-contract"
 import WorldIDVerify from "@/components/WorldIDVerify"
+import { Logo } from "@/components/logo"
 
 export default function Verify() {
   const router = useRouter()
@@ -68,7 +69,8 @@ export default function Verify() {
   return (
     <main className="container max-w-md mx-auto p-4 min-h-screen flex flex-col justify-center">
       <Card className="w-full">
-        <CardHeader>
+        <CardHeader className="flex flex-col items-center">
+          <Logo size="md" className="mb-4" />
           <CardTitle className="text-2xl text-center">Verify Your Identity</CardTitle>
           <CardDescription className="text-center">Verify with World ID to prove you're human</CardDescription>
         </CardHeader>

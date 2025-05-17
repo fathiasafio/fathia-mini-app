@@ -12,6 +12,7 @@ import { Alert, AlertDescription } from "@/components/ui/alert"
 import { Loader2 } from "lucide-react"
 import Link from "next/link"
 import { useAuth } from "@/providers/auth-provider"
+import { Logo } from "@/components/logo"
 
 export default function SignIn() {
   const router = useRouter()
@@ -39,7 +40,8 @@ export default function SignIn() {
   return (
     <main className="container max-w-md mx-auto p-4 min-h-screen flex flex-col justify-center">
       <Card className="w-full">
-        <CardHeader>
+        <CardHeader className="flex flex-col items-center">
+          <Logo size="md" className="mb-4" />
           <CardTitle className="text-2xl text-center">Sign In</CardTitle>
           <CardDescription className="text-center">Enter your credentials to access your account</CardDescription>
         </CardHeader>

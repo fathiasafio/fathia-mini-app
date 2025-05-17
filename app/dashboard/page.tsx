@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react"
 import { useRouter } from "next/navigation"
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
+import { Card, CardContent, CardDescription, CardFooter, CardHeader } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Separator } from "@/components/ui/separator"
@@ -19,6 +19,7 @@ import { useAuth } from "@/providers/auth-provider"
 import { useWallet } from "@/providers/wallet-provider"
 import { useContract } from "@/hooks/use-contract"
 import { useMobile } from "@/hooks/use-mobile"
+import { Logo } from "@/components/logo"
 
 export default function Dashboard() {
   const router = useRouter()
@@ -100,7 +101,7 @@ export default function Dashboard() {
       <Card className="w-full">
         <CardHeader>
           <div className="flex items-center justify-between">
-            <CardTitle className="text-2xl">Mood Chain</CardTitle>
+            <Logo size="sm" />
             <div className="flex items-center gap-2">
               <NetworkIndicator />
               <Button variant="ghost" size="icon" onClick={() => router.push("/profile")}>

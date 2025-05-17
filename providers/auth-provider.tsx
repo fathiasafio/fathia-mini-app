@@ -30,7 +30,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     // Check for existing session
     const checkSession = async () => {
       try {
-        const storedUser = localStorage.getItem("moodchain_user")
+        const storedUser = localStorage.getItem("fathia_user")
         if (storedUser) {
           setUser(JSON.parse(storedUser))
         }
@@ -55,7 +55,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
         name: email.split("@")[0],
       }
 
-      localStorage.setItem("moodchain_user", JSON.stringify(mockUser))
+      localStorage.setItem("fathia_user", JSON.stringify(mockUser))
       setUser(mockUser)
     } catch (error) {
       console.error("Login failed:", error)
@@ -76,7 +76,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
         name,
       }
 
-      localStorage.setItem("moodchain_user", JSON.stringify(mockUser))
+      localStorage.setItem("fathia_user", JSON.stringify(mockUser))
       setUser(mockUser)
     } catch (error) {
       console.error("Registration failed:", error)
@@ -89,7 +89,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   const signout = async () => {
     setIsLoading(true)
     try {
-      localStorage.removeItem("moodchain_user")
+      localStorage.removeItem("fathia_user")
       setUser(null)
     } catch (error) {
       console.error("Logout failed:", error)
@@ -107,7 +107,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
         walletAddress: address,
       }
 
-      localStorage.setItem("moodchain_user", JSON.stringify(updatedUser))
+      localStorage.setItem("fathia_user", JSON.stringify(updatedUser))
       setUser(updatedUser)
     } catch (error) {
       console.error("Failed to update wallet:", error)
